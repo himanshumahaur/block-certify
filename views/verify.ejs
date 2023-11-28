@@ -1,0 +1,78 @@
+<%- include('./partials/header') %>
+<!-- temp.candidate_name, temp.org_name, temp.course_name, temp.expiration_date, temp.ipfsLink, temp.isLocked -->
+
+<style>
+    .form-wrap {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: center;
+}
+
+.custom-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 600px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.form-input {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: border-color 0.3s;
+}
+
+.form-button {
+    margin-top: 10px;
+    background-color: #11a471;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #10f4a4;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+</style>
+
+<div class="form-wrap">
+    <form class="custom-form" action="/verify" method="POST">
+        <div>
+            <label class="form-label" for="_id">Certificate ID:</label>
+            <input class="form-input" type="text" id="_id" name="_id" required>
+        </div>
+        <div>
+            <button class="form-button">Verify</button>
+        </div>        
+    </form>
+</div>
+
+<%- include('./partials/footer') %>

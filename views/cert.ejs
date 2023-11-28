@@ -1,0 +1,80 @@
+<%- include('./partials/header') %>
+<div class="cert-main">
+<div class="cert-container">
+    <div class="cert-cent">
+        <h1 id="certitle">Certificate</h1>
+        <h2 id="candidate_name"><%=cert.candidate_name%></h2>
+        <hr>
+        <h3 id="course_name">Has been certified in <%=cert.course_name%></h3>
+        <h3>By</h3>
+        <h2 id="org_name"><%=cert.org_name%></h2>
+        <hr>
+    </div>
+    <div class="cert-ends">
+        <h3 id="expiration_date">Date: <%=cert.expiration_date%></h3>
+        <h3 id="isLocked">Status: Locked</h3>
+    </div>
+    <p id="ipfs_link"><%=cert.ipfsLink%></p>
+    
+    <form action="/download" method="post">
+        <button name="ipfsLink" value="<%=cert.ipfsLink%>">Download</button>
+    </form>
+    
+</div>
+</div>
+
+<script>
+
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400&family=Open+Sans:wght@400;700&family=Parisienne&family=Roboto+Mono:wght@700&display=swap');
+</style> 
+
+<style>
+    #certitle{
+        font-family: 'Parisienne';
+    }
+
+    hr {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+    .cert-main {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    .cert-container {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+        padding: 10px;
+        margin: 10px;
+        align-items: center;
+
+        width: 600px;
+
+        border: 5px double black;
+    }
+
+    .cert-cent {
+        display: flex;
+        width: 80%;
+        flex-grow: 1;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cert-ends {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+</style>
+
+<%- include('./partials/footer') %>

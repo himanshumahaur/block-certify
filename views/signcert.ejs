@@ -1,0 +1,48 @@
+<%- include('./partials/header') %>
+
+<div class="cert-detail">
+    <h1 id="msg">Please sign the certificate</h1>
+    <p>Certificate ID: <span id="shash">N/A</span></p>
+</div>
+
+<style>
+    .cert-detail {
+        margin: 100px;
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        align-items: center;
+    }
+</style>
+
+<script>
+    let mydata = '<%= encoded %>';
+    console.log(mydata);
+    const msg = document.getElementById('msg');
+    const shash = document.getElementById('shash');
+    
+    ethereum.request({ method:'eth_requestAccounts' }).then((accounts) => {
+        const account = accounts[0];
+        window.ethereum.request({ method: 'eth_chainId' }).then((chainId) => {
+            window.ethereum.request({
+                "method": "eth_sendTransaction",
+                "params": [
+                {
+                    from: account,
+                    to: '0x9b1Ece76339ED92b255cf83Cb277e2aB8567bDf2',
+                    data: mydata
+                }
+                ]
+            }).then((txHash) => {
+                msg.innerHTML = 'Certificate generated successfully!';
+                shash.innerHTML = txHash;
+            }).catch((err) => {
+                msg.innerHTML = 'Certificate generation failed!';
+                shash.innerHTML = 'NA';
+            })
+        });
+    });
+
+</script>
+
+<%- include('./partials/footer') %>

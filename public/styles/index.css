@@ -1,0 +1,45 @@
+.menu-section {
+    display: none;
+
+    flex-grow: 1; /* Make the main section expand to fill available vertical space */
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-container {
+    display: flex;
+    background-color: #fff;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    max-width: 400px;
+}
+
+.button-container img {
+    border-radius: 5px;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+.button-container .card-data {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #11a471;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.button-container:hover {
+    background-color: #10f4a425;
+    transform: scale(1.05);
+}

@@ -1,0 +1,35 @@
+<%- include('./partials/header') %>
+
+<link rel="stylesheet" href="./styles/issue.css">
+
+<div class="form-wrap">
+<form class="custom-form" enctype="multipart/form-data" action="/issue" method="POST">
+    <div class="form-group">
+        <label class="form-label" for="_id">ID:</label>
+        <input class="form-input" type="text" id="_id" name="_id" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="_c_name">Candidate:</label>
+        <input class="form-input" type="text" id="_c_name" name="_c_name" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="_org_name">Organization:</label>
+        <input class="form-input" type="text" id="_org_name" name="_org_name" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="_cert_name">Certified:</label>
+        <input class="form-input" type="text" id="_cert_name" name="_cert_name" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="_exp_date">Expires:</label>
+        <input class="form-input" type="number" id="_exp_date" name="_exp_date" required>
+    </div>
+    <div class="form-group">
+        <label class="form-label" for="pdfFile">Upload PDF:</label>
+        <input class="form-input" type="file" id="pdfFile" name="pdfFile" accept=".pdf" required>
+    </div>
+    <button class="form-button">Submit</button>
+</form>
+</div>
+
+<%- include('./partials/footer') %>

@@ -1,0 +1,35 @@
+<%- include('./partials/header') %>
+
+<script src="./scripts/index.js"></script>
+<link rel="stylesheet" href="./styles/index.css">
+
+<div id="login-section" class="login-section">
+    <img src="./images/metamask_logo.png" alt="MetaMask Logo">
+    <p>Please enable MetaMask</p>
+</div>
+
+<div id="menu-section" class="menu-section">
+    <div class="button-container">
+        <img src="./images/issue_icon.jpg" alt="Issue Icon" class="button-icon">
+        <div class="card-data">
+            <p>Generate and issue new blockchain-based certificates.</p>
+            <button onclick="location.href = '/issue';" class="issue-button">Issue Certificate</button>
+        </div>
+    </div>
+    <div class="button-container">
+        <img src="./images/verify_icon.jpg" alt="Verify Icon" class="button-icon">
+        <div class="card-data">
+            <p>Verify existing certificates stored on the blockchain.</p>
+            <button onclick="location.href = '/verify';" class="verify-button">Verify Certificate</button>
+        </div>
+    </div>
+    <div class="button-container">
+        <img src="./images/lock_icon.jpg" alt="Lock Icon" class="button-icon">
+        <div onclick="location.href = '/manage';" class="card-data">
+            <p>Manage certificates Locking/Unlocking.</p>
+            <button class="lock-button">Lock/Unlock Certificate</button>
+        </div>
+    </div>
+</div>
+
+<%- include('./partials/footer') %>
